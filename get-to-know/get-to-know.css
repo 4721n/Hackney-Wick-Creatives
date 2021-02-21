@@ -1,0 +1,2085 @@
+@font-face {
+    font-family: theBoldFont;
+    src: url(../Fonts/theboldfont.ttf);
+    src: url(../Fonts/theboldfont.eot);
+    src: url(../Fonts/theboldfont.woff);
+    src: url(../Fonts/theboldfont.woff2);
+    src: url(../Fonts/theboldfont.svg);
+    src: url(../Fonts/theboldfont.otf);
+  }
+  @font-face {
+    font-family: avenir;
+    src: url(../Fonts/Avenir.ttc);
+    src: url(../Fonts/Avenir-Book.woff);
+    src: url(../Fonts/Avenir-Book.woff2);
+  }
+
+  @font-face {
+    font-family: Alexandria;
+    src: url(../Fonts/AlexandriaFLF-Bold.ttf);
+    src: url(../Fonts/AlexandriaFLF-Bold.woff);
+    src: url(../Fonts/AlexandriaFLF-Bold.woff2);
+    src: url(../Fonts/AlexandriaFLF-Bold.svg);
+    src: url(../Fonts/AlexandriaFLF-Bold.eot);
+    src: url(../Fonts/AlexandriaFLF-Bold.otf);
+  }
+
+  @font-face {
+    font-family: Source;
+    src: url(../Fonts/SourceSansVariable-Roman.otf);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: black;
+    color: white;
+}
+
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*navbar*/
+
+
+.navbar{
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 999;
+}
+
+.logo img{
+    display: none;
+    position: absolute;
+    top: -55%;
+    left: -2%;
+    height: 300px;
+    width: auto;
+}
+
+
+
+.toggle-button{
+    cursor: pointer;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    font-family: theBoldFont;
+    font-size: 3rem;
+}
+
+.navbar-links{
+    position: absolute;
+    right: 35%;
+    display: none;
+    top: 100%;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.404);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: theBoldFont;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: .1s ease-in-out;
+}
+
+@media(max-width: 425px){
+    .navbar-links{
+        font-size: 1rem;
+        top: 70%;
+    }
+    .navbar .toggle-button{
+        position: absolute;
+        font-size: 30px;
+        top: 30%;
+    }
+}
+
+
+.navbar-links.active{
+    display: block;
+    opacity: 1;
+    right: 5%;
+}
+
+
+
+.navbar-links li{
+    margin: 5px;
+    list-style: none;
+}
+.navbar-links ul a{
+    text-decoration: none;
+    color: white;
+}
+
+/*contact*/
+
+.contact-button{
+    cursor: pointer;
+}
+
+.contact-popup{
+    position: absolute;
+    right: 5%;
+    top: -1000%;
+    background: black;
+    height: 600px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: .5s ease-in-out;
+}
+
+.x{
+    cursor: pointer;
+    font-size: large;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    font-family: theBoldFont;
+}
+
+.contact-popup.active{
+    top: 10%;
+}
+
+.contact-popup h2{
+    font-family: theBoldFont;
+    font-size: 5rem;
+}
+
+.contact-popup p{
+    text-align: center;
+    font-family: avenir;
+}
+
+.contact-form{
+    font-family: Alexandria;
+    margin: 20px;
+    padding: 10px;
+}
+
+.name-input{
+    width: 165px;
+    margin: 5px;
+    padding: 5px;
+}
+.surname-input{
+    margin: 5px;
+    width: 170px;
+    padding: 5px;
+}
+.email-input{
+    margin: 5px;
+    width: 350px;
+    padding: 5px;
+}
+.message-input{
+    margin: 5px;
+    height: 200px;
+    width: 350px;
+    padding: 5px;
+
+}
+.submit-contact{
+    cursor: pointer;
+    margin-top: 25px;
+    width: 350px;
+    font-family: theBoldFont;
+    font-size: 4rem;
+    letter-spacing: 1.5px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none
+}
+
+input[type="text"]:focus{
+    outline: none;
+}
+
+
+@media(max-width: 770px){
+    .submit-contact{
+        font-size: 24px;
+    }
+    .message-input{
+        height: 120px;
+    }
+}
+
+@media(max-width: 425px){
+    .contact-popup h2{
+        font-size: 14px;
+        margin: 0;
+        margin-top: -5px;
+    }
+    .contact-popup p{
+        top: 60px;
+        font-size: 10px;
+    }
+    .contact-popup{
+        left: 5%;
+        background: black;
+        width: 100%;
+        height: 300px;
+    }
+    .contact-form{
+        margin-left: 15px;
+        top: 45px;
+    }
+    .message-input{
+        margin-left: 15px;
+        height: 75px;
+        width: 90%;
+        padding-bottom: 50px;
+
+    }
+    .name-input{
+        margin-left: 15px;
+        height: 20px;
+        width: 42.5%;
+    }
+    .surname-input{
+        height: 20px;
+        width: 42.5%;
+    }
+    .email-input{
+        margin-left: 15px;
+        height: 20px;
+        width: 90%;
+    }
+    .submit-contact{
+        margin-top: 5px;
+        font-size: 20px;
+    }
+}
+/*artists*/
+
+h1{
+    text-align: center;
+    font-size: 12rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: theBoldFont !important;
+}
+
+
+
+/*artist popups - universal*/
+
+.artist-ig{
+    cursor: pointer;
+    position: absolute;
+    font-size: 5rem;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+a{
+    color: white;
+}
+
+.artist-title{
+    text-align: center;
+    margin-top: 20px;
+    font-family: theBoldFont;
+    font-size: 3rem;
+}
+.artist-write-up{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: .75rem;
+    font-family: Source;
+}
+
+.fab{
+    cursor: pointer;
+}
+
+@media(max-width: 425px){
+    .artist-title{
+        font-size: 2rem;
+    }
+    .artist-write-up{
+        font-size: .8rem;
+    }
+    .artist-ig{
+        font-size: 3rem;
+    }
+    .a-x{
+        font-size: 1rem;
+    }
+}
+
+
+
+    .popup .artist-img{
+        height: 50%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-image: url(../get-to-know/GTKimg/Knapple.jpg);
+    }
+
+    @media(max-width: 425px){
+        .popup{
+            width: 95%;
+        }
+    }
+    @media(min-width: 465px){
+        .popup{
+            width: 75%;
+        }
+    }
+
+/*artists*/
+
+h1{
+    text-align: center;
+    font-size: 12rem;
+    font-family: theBoldFont;
+}
+h2{
+    text-align: ;
+}
+
+.span-dot{
+    color: rgba(0, 0, 0, 0);
+    font-size: 1rem;
+}
+
+@media(max-width:1000px){
+    h1{
+        font-size: 8rem;
+    }
+}
+
+@media(max-width:705px){
+    h1{
+        font-size: 6rem;
+    }
+}
+
+@media(max-width:530px){
+    h1{
+        font-size: 4.8rem;
+    }
+}
+
+@media(max-width:425px){
+    h1{
+        font-size: 3rem;
+    }
+}
+
+.artist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    cursor: pointer;
+}
+
+.artist-knapple{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/Knapple.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.artist-stra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/stra.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-alexandra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/ALEXANDRA\ RAMIREZ.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.artist-lukeGrey{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/LUKEGRAY.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-jelly{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/Jelly.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.artist-lukeGrey h1{
+    -webkit-text-stroke: 2px black;
+
+}
+.artist-curtisJackson{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/CURTISJACKSON.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-agwa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/AGWA.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-manyFaces{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/manyfaces.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+.artist-juan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/Juan.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-endless{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/endless.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-orbit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/ORBIT.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-maciej{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/Maciej.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-zaki{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/ZAKI.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-nerone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/NERONE.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-drt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/DRT.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-epod{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/EPOD.jpeg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-mushroom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/HELLOMUSHROOM.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-frankie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/FRANKIE\ STRAND_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-sime{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/Simmse.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.artist-adelaide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../get-to-know/GTKimg/adelaide.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.artist-adelaide h1{
+    -webkit-text-stroke: 2px black;
+}
+    .artist-manyFaces h1{
+        text-align: center;
+    }
+
+
+@media(max-width: 450px){
+    .artist-knapple{
+        height: 35vh;
+        background-image: url(../get-to-know/GTKimg/Knapple.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .artist-stra{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/stra.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-alexandra{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/ALEXANDRA\ RAMIREZ.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .artist-lukeGrey{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/LUKEGRAY.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-jelly{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/Jelly.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-curtisJackson{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/CURTISJACKSON.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-agwa{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/AGWA.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-manyFaces{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/manyfaces.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+}
+@media(max-width: 450px){
+    .artist-manyFaces h1{
+        text-align: center;
+        font-size: 3rem;
+    }
+    .many-text-dot{
+        color: rgba(255, 255, 255, 0);
+        font-size: 1rem;
+    }
+    .artist-juan{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/Juan.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-endless{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/endless.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-orbit{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/ORBIT.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-maciej{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/Maciej.JPG);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-zaki{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/ZAKI.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-nerone{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/NERONE.JPG);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-drt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/DRT.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-epod{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/EPOD.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-mushroom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/HELLOMUSHROOM.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-frankie{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/FRANKIE\ STRAND_.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-sime{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/Simmse.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+    .artist-adelaide{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35vh;
+        width: 100vw;
+        background-image: url(../get-to-know/GTKimg/adelaide.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    
+    }
+}
+
+/*artist popups - universal*/
+
+.artist-ig{
+    position: absolute;
+    font-size: 5rem;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+a {
+    color: white;
+
+}
+
+.artist-title{
+    text-align: center;
+    margin-top: 20px;
+    font-family: theBoldFont;
+    font-size: 6rem;
+}
+.artist-write-up{
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Source;
+}
+
+@media(max-width: 425px){
+    .artist-title{
+        font-size: 2rem;
+    }
+    .artist-write-up{
+        font-size: .8rem;
+    }
+    .artist-ig{
+        font-size: 3rem;
+    }
+    .a-x{
+        font-size: 1rem;
+    }
+}
+
+/*popup -specific*/
+
+/*knapple*/
+    .knapple-popup{
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: -500%;
+        right: 0;
+        width: 80%;
+        height: 60%;
+        background: black;
+        z-index: 99999;
+    }
+
+    .artist-write-up{
+        background: black;
+    }
+
+    .knapple-popup.active{
+        left: 0;
+    }
+
+    .knappple-popup h2{
+        font-size: 4rem;
+    }
+    
+    .knapple-popup p{
+        font-size: .8rem;
+    }
+
+    .knapple-popup .artist-img{
+        height: 50%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-image: url(../get-to-know/GTKimg/Knapple.jpg);
+    }
+
+    @media(max-width: 1000px){
+
+        .knapple-popup h2{
+            font-size: 3.1rem;
+        }
+    }
+
+    @media(max-width: 425px){
+        .knapple-popup{
+            width: 95%;
+            height: 85%;
+            bottom: 2%;
+        }
+        .knappple-popup h2{
+            font-size: 2rem;
+        }
+        
+        .knapple-popup p{
+            font-size: .7rem;
+        }
+    }
+    
+/*stra*/
+.stra-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 65%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.stra-popup.active{
+    left: 0;
+}
+
+.stra-popup h2{
+    font-size: 4rem;
+}
+
+.stra-popup p{
+    font-size: .8rem;
+}
+
+.stra-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/stra.jpg);
+}
+
+@media(max-width: 1000px){
+    .stra-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .stra-popup h2{
+        font-size: 3.1rem;
+    }
+    .stra-popup p{
+        font-size: .6rem;
+    }
+}
+
+@media(max-width: 425px){
+    .stra-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .stra-popup h2{
+        font-size: 3rem;
+        margin: -10px;
+    }
+    .stra-popup p{
+        font-size: .55rem;
+    }
+}
+
+/*alexandra*/
+
+.alexandra-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 40%;
+    background: black;
+    z-index: 99999;
+}
+
+.alexandra-popup.active{
+    left: 0;
+}
+
+.alexandra-popup h2{
+    font-size: 2rem;
+    background: black;
+}
+
+.alexandra-popup p{
+    font-size: .8rem;
+}
+
+.alexandra-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/ALEXANDRA\ RAMIREZ.jpg);
+}
+
+@media(max-width: 425px){
+    .alexandra-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .alexandra-popup h2{
+        font-size: 2.5rem;
+    }
+    .alexandra-popup p{
+        font-size: .65rem;
+    }
+}
+
+/*lukeGrey*/
+
+.lukeGrey-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 55%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.lukeGrey-popup.active{
+    left: 0;
+}
+
+.lukeGrey-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.lukeGrey-popup p{
+    font-size: .8rem;
+}
+
+.lukeGrey-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/rsz_lukegray.jpg);
+}
+
+@media(max-width: 1000px){
+
+    .stra-popup h2{
+        font-size: 3.1rem;
+    }
+    .stra-popup p{
+        font-size: .6rem;
+    }
+}
+
+@media(max-width: 425px){
+    .lukeGrey-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .lukeGrey-popup p{
+        font-size: .55rem;
+    }
+}
+
+/*jelly*/
+
+.jelly-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.jelly-popup.active{
+    left: 0;
+}
+
+.jelly-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.jelly-popup p{
+    font-size: .7rem;
+}
+
+.jelly-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/Jelly.jpg);
+}
+
+@media(max-width: 1000px){
+    .jelly-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .jelly-popup h2{
+        font-size: 3.1rem;
+    }
+    .jelly-popup p{
+        font-size: .6rem;
+    }
+}
+
+@media(max-width: 425px){
+    .jelly-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .jelly-popup p{
+        font-size: .5rem;
+    }
+    
+}
+
+/*curtisJackson*/
+
+.curtisJackson-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 40%;
+    background: black;
+    z-index: 99999;
+}
+
+.artist-curtisJackson h1{
+    -webkit-text-stroke: 2px black;
+
+}
+
+.curtisJackson-popup.active{
+    left: 0;
+}
+
+.curtisJackson-popup h2{
+    font-size: 2rem;
+    background: black;
+}
+
+.curtisJackson-popup p{
+    font-size: .8rem;
+}
+
+.curtisJackson-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/CURTISJACKSON.jpg);
+}
+
+@media(max-width: 425px){
+    .curtisJackson-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .curtisJackson-popup h2{
+        font-size: 2.8rem;
+    }
+    .curtisJackson-popup p{
+        font-size: .7rem;
+    }
+}
+
+/*agwa*/
+
+.agwa-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.agwa-popup.active{
+    left: 0;
+}
+
+.agwa-popup h2{
+    text-align: center;
+    font-size: 2rem;
+    background: black;
+}
+
+.agwa-popup p{
+    font-size: .8rem;
+}
+
+.agwa-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/AGWA.jpg);
+}
+
+@media(max-width: 425px){
+    .agwa-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .agwa-popup h2{
+        font-size: 3rem;
+    }
+    .agwa-popup p{
+        font-size: .7rem;
+    }
+}
+
+/*manyFaces*/
+
+.manyFaces-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 45%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.manyFaces-popup.active{
+    left: 0;
+}
+
+.manyFaces-popup h2{
+    font-size: 3rem;
+    background: black;
+}
+
+.manyFaces-popup p{
+    font-size: .8rem;
+}
+
+.manyFaces-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/manyfaces.jpg);
+}
+
+@media(max-width: 425px){
+    .manyFaces-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .manyFaces-popup h2{
+        font-size: 3.5rem;
+    }
+    .manyFaces-popup p{
+        font-size: .55rem;
+    }
+}
+
+/*juan*/
+
+.juan-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 65%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.juan-popup.active{
+    left: 0;
+}
+
+.juan-popup h2{
+    background: black;
+    font-size: 4rem;
+}
+
+.juan-popup p{
+    font-size: .7rem;
+}
+
+.juan-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/Juan.jpg);
+}
+
+@media(max-width: 1000px){
+    .juan-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .juan-popup h2{
+        font-size: 3.1rem;
+    }
+    .juan-popup p{
+        font-size: .6rem;
+    }
+}
+
+@media(max-width: 425px){
+    .juan-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .juan-popup h2{
+        font-size: 2rem;
+        margin-bottom: -5px;
+    }
+    .juan-popup p{
+        font-size: .45rem;
+    }
+}
+
+/*endless*/
+
+.endless-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 35%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.endless-popup.active{
+    left: 0;
+}
+
+.endless-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.endless-popup p{
+    font-size: .8rem;
+}
+
+.endless-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/endless.jpg);
+}
+
+@media(max-width: 425px){
+    .endless-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .endless-popup h2{
+        font-size: 3rem;
+    }
+    
+    .endless-popup p{
+        font-size: .7rem;
+    }
+}
+
+/*orbit*/
+
+.orbit-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 40%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.orbit-popup.active{
+    left: 0;
+}
+
+.orbit-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.orbit-popup p{
+    font-size: .8rem;
+}
+
+.orbit-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/ORBIT.jpg);
+}
+
+@media(max-width: 425px){
+    .orbit-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .orbit-popup h2{
+        font-size: 3rem;
+    }
+    
+    .orbit-popup p{
+        font-size: .55rem;
+    }
+}
+
+/*maciej*/
+
+.maciej-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.maciej-popup.active{
+    left: 0;
+}
+
+.maciej-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.maciej-popup p{
+    font-size: .8rem;
+}
+
+.maciej-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/Maciej.JPG);
+}
+
+@media(max-width: 425px){
+    .maciej-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .maciej-popup h2{
+        font-size: 2.8rem;
+    }
+    
+    .maciej-popup p{
+        font-size: .52rem;
+    }
+    
+}
+
+
+/*zaki*/
+
+.zaki-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 30%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.zaki-popup.active{
+    left: 0;
+}
+
+.zaki-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.zaki-popup p{
+    font-size: .8rem;
+}
+
+.zaki-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/ZAKI.jpg);
+}
+
+@media(max-width: 425px){
+    .zaki-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+}
+
+/*nerone*/
+
+.nerone-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 60%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.nerone-popup.active{
+    left: 0;
+}
+
+.nerone-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.nerone-popup p{
+    font-size: .8rem;
+}
+
+.nerone-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/NERONE.JPG);
+}
+
+@media(max-width: 425px){
+    .nerone-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .nerone-popup h2{
+        font-size: 3rem;
+        margin-bottom: -9px;
+    }
+    
+    .nerone-popup p{
+        font-size: .5rem;
+    }
+}
+
+/*drt*/
+
+.drt-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 30%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.drt-popup.active{
+    left: 0;
+}
+
+.drt-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.drt-popup p{
+    font-size: .8rem;
+}
+
+.drt-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/DRT.jpg);
+}
+
+@media(max-width: 425px){
+    .drt-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .drt-popup h2{
+        font-size: 3rem;
+    }
+    
+    .drt-popup p{
+        font-size: .75rem;
+    }
+}
+
+
+/*epod*/
+
+.epod-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 60%;
+    height: 40%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.epod-popup.active{
+    left: 0;
+}
+
+.epod-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.epod-popup p{
+    font-size: .8rem;
+}
+
+.epod-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/EPOD.jpeg);
+}
+
+@media(max-width: 425px){
+    .epod-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .epod-popup h2{
+        font-size: 3rem;
+    }
+    
+    .epod-popup p{
+        font-size: .7rem;
+    }
+    .epod-popup .artist-img{
+        background-position: top;
+    height: 60%;
+    }
+}
+
+
+/*mushroom*/
+
+.mushroom-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 40%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.mushroom-popup.active{
+    left: 0;
+}
+
+.mushroom-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.mushroom-popup p{
+    font-size: .8rem;
+}
+
+.mushroom-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/HELLOMUSHROOM.jpeg);
+}
+
+@media(max-width: 425px){
+    .mushroom-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .mushroom-popup h2{
+        font-size: 3rem;
+    }
+    
+    .mushroom-popup p{
+        font-size: .6rem;
+    }
+}
+
+/*frankie*/
+
+.frankie-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.frankie-popup.active{
+    left: 0;
+}
+
+.frankie-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.frankie-popup p{
+    font-size: .8rem;
+}
+
+.frankie-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/FRANKIE\ STRAND_.jpg);
+}
+
+@media(max-width: 425px){
+    .frankie-popup{
+        width: 90%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .frankie-popup h2{
+        font-size: 2rem;
+    }
+    
+    .frankie-popup p{
+        font-size: .5rem;
+    }
+}
+
+
+/*sime*/
+
+.sime-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.sime-popup.active{
+    left: 0;
+}
+
+.sime-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.sime-popup p{
+    font-size: .8rem;
+}
+
+.sime-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/Simmse.jpg);
+}
+
+@media(max-width: 425px){
+    .sime-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .sime-popup h2{
+        font-size: 3rem;
+    }
+    
+    .sime-popup p{
+        font-size: .65rem;
+    }
+}
+
+/*adelaide*/
+
+.adelaide-popup{
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -500%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    background: black;
+    z-index: 99999;
+
+}
+
+.adelaide-popup.active{
+    left: 0;
+}
+
+.adelaide-popup h2{
+    font-size: 4rem;
+    background: black;
+}
+
+.adelaide-popup p{
+    font-size: .8rem;
+}
+
+.adelaide-popup .artist-img{
+    height: 50%;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    background-image: url(../get-to-know/GTKimg/adelaide.jpg);
+}
+
+@media(max-width: 425px){
+    .adelaide-popup{
+        width: 95%;
+        height: 85%;
+        bottom: 2%;
+    }
+    .adelaide-popup h2{
+        font-size: 2.5rem;
+    }
+    
+    .adelaide-popup p{
+        font-size: .6rem;
+    }
+}
+
+
+

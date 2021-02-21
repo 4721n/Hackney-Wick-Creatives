@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Links-->
+    <link rel="stylesheet" href="./newstyles.css">
+<!--font-awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackney Wick Creatives</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img src="./img/logo/HWC-white.png" alt="hackney_wick_creatives_logo"></div>
+            <div class="toggle-button">MENU</div>
+            <div class="navbar-links">
+            <ul>
+                
+                <a href="#"><li>HOME</li></a>
+                <a href="http://hackneywickcreatives.co.uk/wickwalls/wickwalls"><li>WICK WALLS</li></a>
+                <a href="./get-to-know/get-to-know.html"><li>GET TO KNOW</li></a>
+                <li><div class="contact-button"><a>CONTACT</a></div></li>
+                <a href="./support/support.html"><li>SUPPORT</li></a>
+                <a href="https://hackney-wick-creatives-merchandise.myshopify.com/" target="_blank"><li>MERCH</li></a>
+            </ul>
+        </div>
+
+        <!--popup contact-->
+
+        <div class="contact-popup">
+            <div class="x">X</div>
+            <h2>HELLO!</h2>
+            <p>Thank you for visiting Hackney Wick Creatives. <br>
+            Please give us your feedback, questions or just say hello. <br>
+        We will try to answer all as soon as possible.</p>
+            <form class="contact-form" action="/contactform.php" method="POST">
+                <input type="text" name="forname" placeholder="NAME" class="name-input">
+                <input type="text" name="surname" placeholder="SURNAME" class="surname-input"> <br>
+                <input type="text" name="email" placeholder="EMAIL" class="email-input"> <br>
+                <input type="text" name="message" placeholder="MESSAGE" class="message-input"> <br>
+                <button type="submit" name="submit" class="submit-contact">SEND</button>
+            </form>
+
+    </div>
+    </nav>
+
+
+
+    <div class="page-container" style="min-width: 960px; margin: 0 auto;">
+
+    <!--landing page-->
+
+    <div class="hero-container">
+
+        <video id="myVideo" width="100%" height="auto" defaultMuted muted autoplay controls playsinline preload="auto" loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
+            <source src="./video/DSC_0049.mp4" type="video/mp4">
+    </video>
+
+
+        <button onclick="toggleMute();" id="mute-button">
+            <i class="fas fa-volume-up"></i>
+        </button>
+
+    <a href="#wickwalls-link">
+    <div class="scroll-down">
+    <h3>< SCROLL DOWN</h3>
+    </div></a>
+
+        <div class="hero-ig">
+            <a href="https://www.instagram.com/hackney_wick_creatives/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+
+        <div class="hero-bottom">
+            <h2>WELCOME</h2>
+            <h4>Hackney Wick is the heart of all things creative. <br> We believe it's one of the best ever changing street art galleries in the world with artists from all over the globe adding their touch of creativity for us all to enjoy.
+                Please follow us on Instagram for daily photos, events & offers.
+            </h4>
+        </div>
+
+    </div>
+
+
+    <!--wickwalls-->
+
+    <div class="wickwalls-container" id="wickwalls-link">
+
+        <a href="http://hackneywickcreatives.co.uk/wickwalls/wickwalls"><h1>WICK WALLS</h1></a>
+
+    </div>
+
+
+    <!--events-->
+
+    <div class="events-container">
+
+        <a href="./events/events.html"><h1>EVENTS</h1></a>
+
+               <video width="100%" height="auto" autoplay defaultMuted muted playsinline preload="auto" loop>
+            <source src="./video/EventsCOMP.mp4" type="video/mp4">
+    </video>
+    </div>
+
+
+    <!--footer-->
+
+    <div class="footer">
+
+        <div class="footer-logo">
+            <img src="./img/logo/HWC.LOGO.COLOUR-01.png" alt="">
+        </div>
+
+        <h4>Please visit our Instagram page to find out who the artists are and give them a follow. <br>
+        All photos apart from the submitted ones have been taken by us and are all copyrighted © </h4>
+
+    </div>
+
+    </div><!--page container close-->
+
+    <!--JavaScript-->
+    <script src="./app.js"></script>
+    <script src="./mute.js"></script>
+
+</body>
+</html>

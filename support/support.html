@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../support/support.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWC - Support</title>
+</head>
+<body>
+    
+
+    <nav class="navbar">
+        <div class="logo"><img src="./img/logo/HWC-white.png" alt="hackney_wick_creatives_logo"></div>
+            <div class="toggle-button">MENU</div>
+            <div class="navbar-links">
+            <ul>
+                
+                <a href="../index.html"><li>HOME</li></a>
+                <a href="http://hackneywickcreatives.co.uk/wickwalls/wickwalls"><li>WICK WALLS</li></a>
+                <a href="../get-to-know/get-to-know.html"><li>GET TO KNOW</li></a>
+                <a href="../support/support.html" target="_blank"><li>SUPPORT</li></a>
+                <a href="https://hackney-wick-creatives-merchandise.myshopify.com/" target="_blank"><li>MERCH</li></a>
+            </ul>
+        </div>
+
+        <!--popup contact-->
+
+        <div class="contact-popup">
+            <div class="x">X</div>
+            <h2>HELLO!</h2>
+            <p>Thank you for visiting Hackney Wick Creatives. <br>
+            Please give us your feedback, questions or just say hello. <br>
+        We will try to answer all as soon as possible.</p>
+            <form class="contact-form" action="./contactform.php" method="POST">
+                <input type="text" name="forname" placeholder="NAME" class="name-input">
+                <input type="text" name="surname" placeholder="SURNAME" class="surname-input"> <br>
+                <input type="text" name="email" placeholder="EMAIL" class="email-input"> <br>
+                <input type="text" name="message" placeholder="MESSAGE" class="message-input"> <br>
+                <button type="submit" class="submit-contact"> SEND</button>
+            </form>
+
+    </div>
+    </nav>
+
+
+
+
+    <div class="support-container">
+
+        <img src="../img/logo/HWC.LOGO.COLOUR-01.png" alt="hackneywickcreatives" class="hwc-logo">
+
+    <h3> Firstly, thank you for your ongoing support and love you have shown already. <br>
+        This is purely by choice if you would like to leave a small donation to help us continue bringing you up to date on the latest street art and events happening in the area. <br>
+        Your donation will go a long way helping towards the website, merchandise and future plans that we are very excited about. <br>
+        Thank you from the HWC team.
+    </h3>
+
+    <form action="https://www.paypal.com/donate" method="post" target="_top" class="paypal">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="hackneywickcreatives@gmail.com" />
+        <input type="hidden" name="currency_code" value="GBP" />
+        <input type="image" class="paypal" src="../img/wickwallBG/paypal-donate-button.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+
+    </div>
+<script src="../app.js"></script>
+</body>
+</html>
